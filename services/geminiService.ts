@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
 export const getAssistantResponse = async (userPrompt: string): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  // Conforme diretrizes: usar process.env.API_KEY diretamente na inicialização do SDK
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
