@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 
         <div className="cta-container mt-5">
           <a 
-            href="https://pay.kiwify.com.br/nPRP28n" 
+            href="https://pay.kiwify.com.br/rscdSJd" 
             className="block w-full px-8 py-5 bg-[#C46A7A] hover:bg-[#A85765] text-white font-extrabold rounded-[10px] shadow-[0_8px_25px_rgba(196,106,122,0.4)] transition-all transform hover:scale-[1.01] text-center text-[1.1rem]"
           >
             RESERVAR MINHA VAGA (R$ 8,99)
