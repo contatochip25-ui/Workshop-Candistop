@@ -9,12 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <script>
-        // Define process.env globalmente para evitar erros de execução no navegador (Blank Screen)
-        window.process = {
-            env: {
-                NODE_ENV: 'production'
-            }
-        };
+        // Define process.env globalmente de forma robusta para evitar erros de execução no navegador
+        window.process = window.process || {};
+        window.process.env = window.process.env || {};
+        window.process.env.NODE_ENV = 'production';
     </script>
     <style>
         :root {
@@ -58,5 +56,7 @@
 </head>
 <body class="bg-[#FAF7F5] text-[#2B2B2B]">
     <div id="root"></div>
+    <!-- Carrega o ponto de entrada da aplicação React -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
