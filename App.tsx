@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import EmotionalBlock from './components/EmotionalBlock';
 import LearningSection from './components/LearningSection';
+import PrivacyBox from './components/PrivacyBox';
 import Assistant from './components/Assistant';
 import GuaranteeSection from './components/GuaranteeSection';
 import OfferBox from './components/OfferBox';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
     <main className="min-h-screen">
       <Hero />
       <EmotionalBlock />
+      <PrivacyBox />
       <LearningSection />
       <Assistant />
       <OfferBox />
