@@ -9,30 +9,38 @@ const Assistant: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const suggestedQuestions = [
+    "Preciso aparecer na câmera?",
+    "O que vou aprender?",
+    "E se eu perder o ao vivo?",
+    "Tem garantia?",
+    "É seguro participar?"
+  ];
+
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isLoading]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+  const handleSend = async (text: string = input) => {
+    const messageToSend = text.trim();
+    if (!messageToSend || isLoading) return;
 
-    const userMsg: AssistantMessage = { role: 'user', content: input };
+    const userMsg: AssistantMessage = { role: 'user', content: messageToSend };
     setMessages(prev => [...prev, userMsg]);
-    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
     try {
-      const responseText = await getAssistantResponse(currentInput);
+      const responseText = await getAssistantResponse(messageToSend);
       const assistantMsg: AssistantMessage = { role: 'assistant', content: responseText };
       setMessages(prev => [...prev, assistantMsg]);
     } catch (error) {
       console.error("Erro no assistente:", error);
       const errorMsg: AssistantMessage = { 
         role: 'assistant', 
-        content: "Desculpe, tive um pequeno problema técnico. O workshop Além do Tratamento é o lugar ideal para tirar essas dúvidas. Que tal garantir sua vaga para conversarmos melhor lá?" 
+        content: "Entendo sua preocupação. O workshop Além do Tratamento é o ambiente ideal para resolvermos isso juntas de forma segura e anônima." 
       };
       setMessages(prev => [...prev, errorMsg]);
     } finally {
@@ -51,11 +59,24 @@ const Assistant: React.FC = () => {
           
           <div 
             ref={scrollRef}
-            className="h-80 overflow-y-auto p-6 space-y-4 bg-gray-50/50"
+            className="h-[400px] overflow-y-auto p-6 space-y-4 bg-gray-50/50"
           >
-            <p className="text-[#6B6B6B] text-center italic mt-4 mb-6">
-              Olá! Como posso te ajudar a entender melhor se este encontro é para você?
-            </p>
+            <div className="text-center mb-6">
+              <p className="text-[#6B6B6B] italic text-sm mb-4">
+                Olá! Como posso te ajudar a entender melhor se este encontro é para você?
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {suggestedQuestions.map((q, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSend(q)}
+                    className="text-[11px] font-bold bg-white border border-[#E8DAD6] text-[#C46A7A] px-3 py-1.5 rounded-full hover:bg-[#C46A7A] hover:text-white transition-all shadow-sm uppercase tracking-tighter"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            </div>
             
             {messages.map((msg, i) => (
               <div 
@@ -91,12 +112,12 @@ const Assistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Escreva sua dúvida aqui..."
-              className="flex-1 px-4 py-2 border border-[#E8DAD6] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C46A7A]"
+              className="flex-1 px-4 py-2 border border-[#E8DAD6] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C46A7A] text-sm"
             />
             <button 
-              onClick={handleSend}
+              onClick={() => handleSend()}
               disabled={isLoading}
-              className="bg-[#C46A7A] text-white px-6 py-2 rounded-lg hover:bg-[#A85765] transition-colors font-semibold"
+              className="bg-[#C46A7A] text-white px-6 py-2 rounded-lg hover:bg-[#A85765] transition-colors font-semibold text-sm"
             >
               {isLoading ? '...' : 'Enviar'}
             </button>
