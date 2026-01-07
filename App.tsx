@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import EmotionalBlock from './components/EmotionalBlock';
 import LearningSection from './components/LearningSection';
 import Assistant from './components/Assistant';
+import GuaranteeSection from './components/GuaranteeSection';
 import OfferBox from './components/OfferBox';
 import Footer from './components/Footer';
 
@@ -15,6 +16,7 @@ const App: React.FC = () => {
       <LearningSection />
       <Assistant />
       <OfferBox />
+      <GuaranteeSection />
       <Footer />
     </main>
   );
