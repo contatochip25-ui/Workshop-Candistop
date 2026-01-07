@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const InfoBox: React.FC = () => {
@@ -8,7 +9,7 @@ const InfoBox: React.FC = () => {
           <svg className="w-4 h-4 fill-[#C46A7A]" viewBox="0 0 24 24">
             <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
           </svg>
-          09 de Janeiro
+          11 de Janeiro
         </div>
         <div className="flex items-center gap-2 font-bold text-[0.9rem] text-[#1A1A1A]">
           <svg className="w-4 h-4 fill-[#C46A7A]" viewBox="0 0 24 24">

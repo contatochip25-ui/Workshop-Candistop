@@ -1,44 +1,73 @@
 
-import React from 'react';
-import InfoBox from './InfoBox';
-import ProgressBar from './ProgressBar';
+import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
-  return (
-    <section className="pt-10 pb-[10px] md:pt-16 md:pb-8 text-center px-6">
-      <div className="max-w-[500px] mx-auto">
-        <h1 className="text-[32px] md:text-5xl font-black text-[#1A1A1A] mb-[15px] leading-[1.2] md:leading-[1.1] serif">
-          O <span className="text-[#C46A7A] italic">Método</span> para interromper o ciclo do <span className="text-[#C46A7A] italic">corrimento</span>, do <span className="text-[#C46A7A] italic">mau cheiro</span> e das <span className="text-[#C46A7A] italic">coceiras</span>.
-        </h1>
-        
-        <InfoBox />
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-        <div className="cta-container mt-5">
-          <a 
-            href="https://pay.kiwify.com.br/rscdSJd" 
-            className="block w-full px-8 py-5 bg-[#C46A7A] hover:bg-[#A85765] text-white font-extrabold rounded-[10px] shadow-[0_8px_25px_rgba(196,106,122,0.4)] transition-all transform hover:scale-[1.01] text-center text-[1.1rem]"
-          >
-            RESERVAR MINHA VAGA (R$ 8,99)
-          </a>
-          
-          <div className="mt-4 flex items-center justify-center gap-2 text-[#C46A7A] font-bold text-[0.85rem]">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" strokeWidth="2.5" />
-            </svg>
-            PARTICIPAÇÃO 100% INVISÍVEL (CÂMERA OFF)
+  useEffect(() => {
+    const targetDate = new Date("2026-01-11T20:00:00").getTime();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="hero-section" className="bg-soft-pink pt-12 pb-20 px-4 md:px-0">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="inline-block bg-white text-elegant-red border-2 border-elegant-red px-4 py-1 rounded-full font-bold text-xs md:text-sm mb-8 animate-pulse">
+          🔴 AO VIVO | 11 de Janeiro às 20h00 | Vagas Limitadas
+        </div>
+        
+        <h1 className="text-3xl md:text-6xl font-black text-dark-grey leading-tight mb-6 serif uppercase">
+          CHEGA DE SOFRER EM SILÊNCIO:<br/>
+          <span className="text-elegant-red italic">Elimine DEFINITIVAMENTE</span><br/>
+          Corrimento, Coceira e Mau Cheiro em 7 Dias
+        </h1>
+
+        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+          Descubra o método validado por especialistas que já libertou mais de 12.000 mulheres - sem remédios caros, sem consultas intermináveis, sem vergonha.
+        </p>
+
+        <div className="bg-white p-4 md:p-6 rounded-2xl shadow-lg border border-pink-100 mb-10 inline-block">
+          <p className="text-elegant-red font-bold text-sm md:text-base">✨ Com Dra. Sarah Mendes, Especialista em Saúde Íntima Feminina há 9 anos</p>
+        </div>
+
+        <div className="max-w-md mx-auto mb-8">
+            <a href="#checkout" className="main-cta-btn pulse block w-full bg-elegant-red hover:bg-red-700 text-white font-black py-5 rounded-xl shadow-xl transition-all text-lg md:text-xl uppercase tracking-wider">
+              QUERO GARANTIR MINHA VAGA POR R$ 8,00
+            </a>
+            <p className="mt-4 text-xs md:text-sm font-bold text-gray-600 uppercase flex items-center justify-center gap-2">
+                Encontro 100% Online e Ao Vivo via Zoom
+            </p>
+        </div>
+
+        <div className="flex justify-center gap-4 mb-10 text-elegant-red">
+          <div className="text-center">
+            <span className="block text-2xl font-black serif">{timeLeft.days}</span>
+            <span className="text-[10px] uppercase font-bold text-gray-600">Dias</span>
           </div>
-          
-          <ProgressBar 
-            label="Inscrições Confirmadas" 
-            percentage="94%" 
-            fillWidth="94%" 
-          />
-          
-          <div className="secure-tag mt-[15px] inline-flex items-center gap-[5px] bg-[#E1D6D3] px-[15px] py-2 rounded-[5px] font-bold text-[0.8rem] text-[#1A1A1A]">
-            🔒 Ambiente 100% Anônimo e Sigiloso
+          <div className="text-center">
+            <span className="block text-2xl font-black serif">{timeLeft.hours}</span>
+            <span className="text-[10px] uppercase font-bold text-gray-600">Horas</span>
           </div>
+          <div className="text-center">
+            <span className="block text-2xl font-black serif">{timeLeft.minutes}</span>
+            <span className="text-[10px] uppercase font-bold text-gray-600">Minutos</span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-6 text-xs md:text-sm text-gray-700 font-bold opacity-80">
+          <span>🔒 Ambiente 100% Seguro e Anônimo</span>
+          <span>✓ Certificado de Conclusão</span>
+          <span>💯 Garantia de Satisfação</span>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ REGRAS DE OURO:
 BASE DE CONHECIMENTO E GATILHOS:
 
 1. LOGÍSTICA (Keywords: dia, data, quando, horário, hora, zoom, online, local, link)
-RESPOSTA: "Olá! O workshop acontece dia 09 de janeiro às 20h00, online via Zoom. Garanta sua vaga agora por apenas R$ 8,99 e receba o link por e-mail!"
+RESPOSTA: "Olá! O workshop acontece dia 11 de janeiro às 20h00, online via Zoom. Garanta sua vaga agora por apenas R$ 8,00 e receba o link por e-mail!"
 
 2. PRIVACIDADE (Keywords: câmera, aparecer, rosto, ver, vídeo, anônimo, invisível, segredo, saber, nome, identificar)
 RESPOSTA: "Fique tranquila! Câmeras e microfones são bloqueados por padrão para garantir seu total anonimato. Você assiste de forma 100% invisível e segura."
@@ -34,19 +34,19 @@ RESPOSTA: "Você aprenderá a causa real da recorrência e o protocolo prático 
 RESPOSTA: "Entendo sua dor. O workshop foi feito justamente para quem sofre com sintomas que sempre voltam, ensinando como equilibrar seu corpo e retomar sua liberdade."
 
 6. PAGAMENTO (Keywords: pagar, preço, valor, barato, golpe, confiável, garantia, reembolso, pix, cartão, boleto)
-RESPOSTA: "O valor de R$ 8,99 é simbólico e seguro via Kiwify. Se não gostar, você tem 7 dias de garantia total — risco zero para sua decisão."
+RESPOSTA: "O valor de R$ 8,00 é simbólico e seguro via Kiwify. Se não gostar, você tem 7 dias de garantia total — risco zero para sua decisão."
 
 7. HESITAÇÃO (Keywords: dúvida, pensar, refletir, ver depois, não sei, serve pra mim, grave)
-RESPOSTA: "Não deixe a dúvida te manter no desconforto. Por apenas R$ 8,99, você acessa o conhecimento que vai te devolver a segurança — garanta sua vaga antes que o lote encerre!"
+RESPOSTA: "Não deixe a dúvida te manter no desconforto. Por apenas R$ 8,00, você acessa o conhecimento que vai te devolver a segurança — garanta sua vaga antes que as inscrições encerrem!"
 
 Sempre valide a emoção da cliente e termine incentivando a reserva da vaga.`,
         temperature: 0.2,
       },
     });
 
-    return response.text || "Entendo sua dúvida! O workshop Além do Tratamento é o lugar ideal para resolvermos isso. Que tal garantir sua vaga por apenas R$ 8,99?";
+    return response.text || "Entendo sua dúvida! O workshop Além do Tratamento é o lugar ideal para resolvermos isso. Que tal garantir sua vaga por apenas R$ 8,00?";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "Olá! Entendo sua preocupação. O workshop acontece dia 09/01 às 20h e é o ambiente mais seguro para resolvermos suas dúvidas sobre saúde íntima.";
+    return "Olá! Entendo sua preocupação. O workshop acontece dia 11/01 às 20h e é o ambiente mais seguro para resolvermos suas dúvidas sobre saúde íntima.";
   }
 };
