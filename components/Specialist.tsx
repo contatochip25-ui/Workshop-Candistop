@@ -18,20 +18,21 @@ const Specialist: React.FC = () => {
           </div>
           
           <div className="w-full md:w-3/5 text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-black mb-6 serif">Quem É a Dra. Sarah Mendes</h2>
+            <h2 className="text-3xl md:text-5xl font-black mb-6 serif">Quem é a Dra. Sarah Mendes</h2>
+            
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              Dra. Sarah Mendes é especialista em Saúde Íntima Feminina, com mais de 9 anos de experiência ajudando mulheres a se libertarem de desconfortos íntimos recorrentes e retomarem segurança e bem-estar no próprio corpo.
+            </p>
+            
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Dra. Sarah Mendes é especialista em Saúde Íntima Feminina com mais de 9 anos de experiência clínica. Formada pela USP, com especializações em Ginecologia Natural e Fitoterapia Aplicada.
+              Seu trabalho já impactou milhares de mulheres que buscavam soluções reais para problemas íntimos persistentes, por meio de métodos práticos, acessíveis e sem tabu.
             </p>
             
             <div className="space-y-3 mb-10 text-gray-800 font-medium">
-              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Mais de 12.000 mulheres atendidas</p>
+              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Mais de 12.000 mulheres ajudadas</p>
               <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Criadora do Método Equilíbrio Íntimo</p>
-              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Palestrante Internacional</p>
-              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Defensora da saúde íntima sem tabus</p>
-            </div>
-
-            <div className="bg-soft-pink p-6 rounded-2xl italic text-elegant-red font-bold text-xl serif leading-tight">
-                "Minha missão é devolver a confiança e qualidade de vida para mulheres que sofrem em silêncio. Nenhuma mulher deveria se sentir envergonhada de seu próprio corpo."
+              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Palestrante internacional em saúde íntima feminina</p>
+              <p className="flex items-center gap-3"><span className="text-elegant-red">✓</span> Defensora de uma saúde íntima sem medo ou vergonha</p>
             </div>
           </div>
         </div>
