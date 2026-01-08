@@ -21,7 +21,6 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between gap-8 text-[10px] md:text-xs">
           <div className="space-y-2">
-            <p>CNPJ: 00.000.000/0001-00 | Endereço: Av. Paulista, 1000 - São Paulo/SP</p>
             <p>Email de Suporte: contato@alematratamento.com.br</p>
             <p>&copy; 2026 - Todos os direitos reservados</p>
           </div>
