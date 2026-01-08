@@ -1,5 +1,6 @@
 
 import React from 'react';
+import ProgressBar from './ProgressBar';
 
 const FinalOffer: React.FC = () => {
   return (
@@ -13,30 +14,38 @@ const FinalOffer: React.FC = () => {
           <div className="bg-gray-50 p-8 rounded-3xl mb-10 text-left">
             <p className="font-black text-elegant-red uppercase text-sm mb-6 tracking-widest">O QUE VOCÊ ESTÁ RECEBENDO:</p>
             <ul className="space-y-3 mb-10 text-gray-700 font-bold text-sm md:text-base">
-              <li>✅ Encontro ao vivo de 90 minutos (R$ 297)</li>
-              <li>✅ E-book "Guia Completo" (R$ 47)</li>
-              <li>✅ Grupo VIP por 30 dias (R$ 97)</li>
-              <li>✅ Lista de Produtos Aprovados (R$ 27)</li>
-              <li>✅ Gravação do encontro por 7 dias (R$ 37)</li>
-              <li>✅ Certificado Digital (R$ 27)</li>
-              <li>✅ Suporte direto (R$ 147)</li>
+              <li>✅ Encontro ao vivo de 90 minutos (R$ 8,99)</li>
+              <li>✅ E-book "Guia Completo" (R$ 8,99)</li>
+              <li>✅ Grupo VIP por 30 dias (R$ 8,99)</li>
+              <li>✅ Lista de Produtos Aprovados (R$ 8,99)</li>
+              <li>✅ Gravação do encontro por 7 dias (R$ 8,99)</li>
+              <li>✅ Certificado Digital (R$ 8,99)</li>
+              <li>✅ Suporte direto (R$ 8,99)</li>
             </ul>
             <div className="border-t-2 border-dashed border-gray-200 pt-6 flex justify-between items-center">
               <span className="text-gray-500 font-bold">ACESSO COMPLETO AO MÉTODO</span>
               <div className="text-right">
                 <span className="block text-xs uppercase font-bold text-gray-500">Valor de inscrição:</span>
-                <span className="text-5xl md:text-7xl font-black text-elegant-red serif">R$ 8,00</span>
+                <span className="text-5xl md:text-7xl font-black text-elegant-red serif">R$ 8,99</span>
               </div>
             </div>
           </div>
 
-          <p className="mb-4 font-bold text-gray-600">Ou em até 12x de R$ 0,89 no cartão</p>
+          <p className="mb-4 font-bold text-gray-600">Ou em até 12x de R$ 0,95 no cartão</p>
           <p className="mb-8 text-elegant-red font-black text-lg">💡 Pagamento via PIX: Confirmação Imediata e Segura</p>
 
           <div className="cta-container">
             <a href="https://pay.kiwify.com.br/rscdSJd" className="main-cta-btn pulse block w-full bg-elegant-red hover:bg-red-700 text-white font-black py-6 rounded-2xl shadow-xl transition-all text-xl md:text-3xl uppercase tracking-wider mb-6">
-              SIM! QUERO GARANTIR MINHA VAGA POR R$ 8,00
+              SIM! QUERO GARANTIR MINHA VAGA POR R$ 8,99
             </a>
+            
+            <div className="mt-2 mb-8">
+              <ProgressBar 
+                label="342 de 500 vagas reservadas" 
+                percentage="68% preenchido" 
+                fillWidth="68%" 
+              />
+            </div>
             
             <div className="flex flex-col items-center gap-4">
               <img src="https://logodownload.org/wp-content/uploads/2014/10/cartao-visa-logo-0.png" alt="Cards" className="h-6 opacity-30 grayscale" />

@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import ProgressBar from './ProgressBar';
 
 const Hero: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -40,10 +41,15 @@ const Hero: React.FC = () => {
           <p className="text-elegant-red font-bold text-sm md:text-base">✨ Com Dra. Sarah Mendes, Especialista em Saúde Íntima Feminina há 9 anos</p>
         </div>
 
-        <div className="max-w-md mx-auto mb-8">
+        <div className="max-w-md mx-auto mb-8 px-4">
             <a href="#checkout" className="main-cta-btn pulse block w-full bg-elegant-red hover:bg-red-700 text-white font-black py-5 rounded-xl shadow-xl transition-all text-lg md:text-xl uppercase tracking-wider">
-              QUERO GARANTIR MINHA VAGA POR R$ 8,00
+              QUERO GARANTIR MINHA VAGA POR R$ 8,99
             </a>
+            <ProgressBar 
+              label="342 de 500 vagas reservadas" 
+              percentage="68% preenchido" 
+              fillWidth="68%" 
+            />
             <p className="mt-4 text-xs md:text-sm font-bold text-gray-600 uppercase flex items-center justify-center gap-2">
                 Encontro 100% Online e Ao Vivo via Zoom
             </p>

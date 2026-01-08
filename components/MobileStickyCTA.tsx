@@ -36,7 +36,7 @@ const MobileStickyCTA: React.FC = () => {
     <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-pink-100 p-3 z-40 md:hidden flex items-center justify-between px-6 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] animate-fade-in">
        <div className="flex flex-col">
           <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tight">Vagas Limitadas</span>
-          <span className="text-sm font-black text-dark-grey">Workshop R$ 8,00</span>
+          <span className="text-sm font-black text-dark-grey">Workshop R$ 8,99</span>
        </div>
        <a href="#checkout" className="bg-elegant-red text-white text-[11px] font-black px-6 py-2.5 rounded-full uppercase tracking-wider">
           Inscrever-se

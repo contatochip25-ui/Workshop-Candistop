@@ -5,7 +5,7 @@ const WhyDifferent: React.FC = () => {
   const cards = [
     { icon: "👩‍⚕️", title: "Com Quem Entende de VERDADE", text: "Dra. Sarah é especialista com mais de 9 anos ajudando mulheres a reconquistarem sua saúde íntima. Não é teoria: é experiência real." },
     { icon: "🔬", title: "Método Validado", text: "Não são receitas da internet. É um protocolo completo baseado em ciência, que ataca a causa raiz - não apenas os sintomas." },
-    { icon: "💰", title: "Acesso Democratizado", text: "Acreditamos que esse conhecimento deve ser acessível a todas. Por isso, o investimento é de apenas R$ 8,00, permitindo que você tome essa decisão de forma imediata e segura." },
+    { icon: "💰", title: "Acesso Democratizado", text: "Acreditamos que esse conhecimento deve ser acessível a todas. Por isso, o investimento é de apenas R$ 8,99, permitindo que você tome essa decisão de forma imediata e segura." },
     { icon: "🎥", title: "Ao Vivo e Interativo", text: "Não é curso gravado. É um encontro AO VIVO via Zoom onde você pode fazer perguntas anônimas e receber orientações reais." }
   ];
 

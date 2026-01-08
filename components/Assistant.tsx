@@ -34,7 +34,7 @@ const Assistant: React.FC = () => {
               {activeId === faq.id && (
                 <div className="pb-6 animate-fade-in">
                   <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 italic pl-4 border-l-2 border-elegant-red">{faq.r}</p>
-                  <a href="#checkout" className="text-xs font-black uppercase tracking-widest text-elegant-red underline">Garantir minha vaga agora →</a>
+                  <a href="#checkout" className="text-xs font-black uppercase tracking-widest text-elegant-red underline">Garantir minha vaga agora por R$ 8,99 →</a>
                 </div>
               )}
             </div>

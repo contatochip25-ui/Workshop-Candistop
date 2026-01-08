@@ -42,7 +42,7 @@ const ExitPopup: React.FC<ExitPopupProps> = ({ onClose }) => {
         <div className="bg-soft-pink p-6 rounded-2xl border-2 border-dashed border-elegant-red mb-8">
           <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Sua decisão inteligente começa aqui:</p>
           <p className="text-3xl font-black text-elegant-red tracking-widest serif">LIBERDADE</p>
-          <p className="mt-4 font-black text-dark-grey text-xl">SUA VAGA POR APENAS R$ 8,00</p>
+          <p className="mt-4 font-black text-dark-grey text-xl">SUA VAGA POR APENAS R$ 8,99</p>
         </div>
 
         <p className="text-xs font-bold text-gray-400 uppercase mb-6">Disponível por apenas: {formatTime(timeLeft)}</p>

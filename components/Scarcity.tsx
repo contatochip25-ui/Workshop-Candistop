@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import ProgressBar from './ProgressBar';
 
 const Scarcity: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({ h: 12, m: 45, s: 23 });
@@ -22,18 +23,16 @@ const Scarcity: React.FC = () => {
         <h2 className="text-2xl md:text-4xl font-black mb-8 text-elegant-red serif uppercase">⚠️ ATENÇÃO: Vagas Limitadas e Inscrições Abertas</h2>
         
         <div className="max-w-md mx-auto mb-10">
-          <div className="flex justify-between font-black text-xs md:text-sm mb-2 uppercase tracking-tighter">
-            <span>342 de 500 vagas reservadas</span>
-            <span className="text-elegant-red">68% Preenchido</span>
-          </div>
-          <div className="w-full h-4 bg-white rounded-full overflow-hidden border border-pink-200">
-            <div className="h-full bg-elegant-red w-[68%] transition-all duration-1000"></div>
-          </div>
+          <ProgressBar 
+            label="342 de 500 vagas reservadas" 
+            percentage="68% preenchido" 
+            fillWidth="68%" 
+          />
         </div>
 
         <div className="bg-elegant-red text-white p-6 md:p-8 rounded-3xl inline-block shadow-2xl pulse">
           <p className="font-black text-lg md:text-xl mb-4 uppercase tracking-widest">🔥 ÚLTIMAS HORAS</p>
-          <p className="text-sm md:text-base mb-6 opacity-90">O valor simbólico de R$ 8,00 é válido apenas até hoje às 23h59 para garantir sua vaga.</p>
+          <p className="text-sm md:text-base mb-6 opacity-90">O valor simbólico de R$ 8,99 é válido apenas até hoje às 23h59 para garantir sua vaga.</p>
           <div className="flex justify-center gap-6 font-black serif text-3xl md:text-5xl">
             <div>{String(timeLeft.h).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Horas</span></div>
             <div>:</div>

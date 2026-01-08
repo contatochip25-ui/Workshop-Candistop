@@ -41,7 +41,7 @@ const Comparison: React.FC = () => {
 
         <div className="text-center mt-12">
             <p className="text-xl md:text-2xl font-black text-elegant-red italic serif">
-                "Por apenas R$ 8,00, você acessa mais informação e suporte do que em métodos convencionais. Faz sentido para você?"
+                "Por apenas R$ 8,99, você acessa mais informação e suporte do que em métodos convencionais. Faz sentido para você?"
             </p>
         </div>
       </div>
