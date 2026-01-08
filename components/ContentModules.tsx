@@ -15,8 +15,7 @@ const ContentModules: React.FC = () => {
   const bonuses = [
     { name: "🎁 E-book: 'Guia Completo de Saúde Íntima'", val: "R$ 97,00" },
     { name: "🎁 Grupo VIP no WhatsApp (30 dias)", val: "R$ 147,00" },
-    { name: "🎁 Lista de produtos aprovados", val: "R$ 47,00" },
-    { name: "🎁 Gravação do encontro por 7 dias", val: "R$ 97,00" }
+    { name: "🎁 Lista de produtos aprovados", val: "R$ 47,00" }
   ];
 
   return (
@@ -57,7 +56,7 @@ const ContentModules: React.FC = () => {
               </div>
             ))}
           </div>
-          <p className="text-center font-black text-elegant-red text-xl uppercase tracking-tighter">VALOR TOTAL DOS BÔNUS: R$ 388,00</p>
+          <p className="text-center font-black text-elegant-red text-xl uppercase tracking-tighter">VALOR TOTAL DOS BÔNUS: R$ 291,00</p>
         </div>
       </div>
     </section>

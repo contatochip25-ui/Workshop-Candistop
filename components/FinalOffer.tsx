@@ -14,16 +14,15 @@ const FinalOffer: React.FC = () => {
           <div className="bg-gray-50 p-8 rounded-3xl mb-10 text-left">
             <p className="font-black text-elegant-red uppercase text-sm mb-6 tracking-widest">O QUE VOCÊ ESTÁ RECEBENDO:</p>
             <ul className="space-y-3 mb-10 text-gray-700 font-bold text-sm md:text-base">
-              <li>✅ Encontro ao vivo de 90 minutos (Valor: R$ 197,00)</li>
+              <li>✅ Encontro ao vivo (Valor: R$ 197,00)</li>
               <li>✅ E-book "Guia Completo de Saúde Íntima" (Valor: R$ 97,00)</li>
               <li>✅ Grupo VIP por 30 dias (Valor: R$ 147,00)</li>
               <li>✅ Lista de Produtos Aprovados (Valor: R$ 47,00)</li>
-              <li>✅ Gravação do encontro por 7 dias (Valor: R$ 97,00)</li>
               <li>✅ Certificado Digital de Participação (Valor: R$ 27,00)</li>
               <li>✅ Suporte direto para dúvidas (Valor: R$ 97,00)</li>
             </ul>
             <div className="border-t-2 border-dashed border-gray-200 pt-6 flex justify-between items-center">
-              <span className="text-gray-500 font-bold uppercase text-xs">VALOR TOTAL: <span className="line-through">R$ 709,00</span></span>
+              <span className="text-gray-500 font-bold uppercase text-xs">VALOR TOTAL: <span className="line-through">R$ 612,00</span></span>
               <div className="text-right">
                 <span className="block text-xs uppercase font-bold text-gray-500">Inscrição promocional:</span>
                 <span className="text-5xl md:text-7xl font-black text-elegant-red serif">R$ 8,99</span>
