@@ -3,17 +3,36 @@ import React, { useState, useEffect } from 'react';
 import ProgressBar from './ProgressBar';
 
 const Scarcity: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState({ h: 12, m: 45, s: 23 });
+  const [timeLeft, setTimeLeft] = useState({ h: 0, m: 0, s: 0 });
 
   useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      
+      // Define o alvo como 23:59:59 do dia atual
+      const target = new Date();
+      target.setHours(23, 59, 59, 999);
+      
+      const diff = target.getTime() - now.getTime();
+      
+      if (diff <= 0) {
+        return { h: 0, m: 0, s: 0 };
+      }
+      
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / 1000 / 60) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      
+      return { h, m, s };
+    };
+
+    // Inicializa
+    setTimeLeft(calculateTimeLeft());
+
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.s > 0) return { ...prev, s: prev.s - 1 };
-        if (prev.m > 0) return { ...prev, m: prev.m - 1, s: 59 };
-        if (prev.h > 0) return { ...prev, h: prev.h - 1, m: 59, s: 59 };
-        return prev;
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -34,11 +53,11 @@ const Scarcity: React.FC = () => {
           <p className="font-black text-lg md:text-xl mb-4 uppercase tracking-widest">🔥 ÚLTIMAS HORAS</p>
           <p className="text-sm md:text-base mb-6 opacity-90">O valor simbólico de R$ 8,99 é válido apenas até hoje às 23h59 para garantir sua vaga.</p>
           <div className="flex justify-center gap-6 font-black serif text-3xl md:text-5xl">
-            <div>{String(timeLeft.h).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Horas</span></div>
+            <div className="w-16 md:w-24">{String(timeLeft.h).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Horas</span></div>
             <div>:</div>
-            <div>{String(timeLeft.m).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Min</span></div>
+            <div className="w-16 md:w-24">{String(timeLeft.m).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Min</span></div>
             <div>:</div>
-            <div>{String(timeLeft.s).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Seg</span></div>
+            <div className="w-16 md:w-24">{String(timeLeft.s).padStart(2, '0')}<span className="block text-[10px] uppercase mt-1 font-bold text-white/90">Seg</span></div>
           </div>
         </div>
       </div>
